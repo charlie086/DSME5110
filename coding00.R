@@ -1,3 +1,4 @@
+#clear the variables
 rm(list = ls())
 # Install a package
 install.packages('tidyverse')
@@ -7,19 +8,10 @@ library(ggplot2)
 
 renv::init()
 
-ggplot(diamonds, aes(cut)) + geom_bar()
+#barplot
+ggplot(diamonds) + geom_bar(aes(x=cut))
 
-diamonds
-
-mpg
-
-a=12
-b=2
-
-rm(list=ls())
-
-ls()
-
+#scatterplot
 ggplot(mpg) + geom_point(aes(x = displ, y = hwy, color = class))+
   geom_smooth(aes(x = displ, y = hwy))+
   facet_wrap(~ class, nrow = 3)+
@@ -28,8 +20,8 @@ ggplot(mpg) + geom_point(aes(x = displ, y = hwy, color = class))+
 
 renv::settings$snapshot.type("all")
 
+#world map
 install.packages('maps')
-
 ggplot(map_data('world')) +
   geom_polygon(aes(long, lat, group = group), fill = 'white', colour = 'black') +
   coord_quickmap()

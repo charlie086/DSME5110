@@ -1,3 +1,1 @@
-print('ABC')
-print('DEF')
-print('DEF')
+rm(list = ls())
